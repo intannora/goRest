@@ -18,3 +18,4 @@ use App\Http\Controllers\Posts;
     return view('welcome');
 });*/
 Route::get('posts',[Posts::class,'index']);
+Route::get('add',[Posts::class,'add']);
