@@ -9,45 +9,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="{{ url('/css/custom.css') }}" rel="stylesheet">
 
-    <title>Post Index</title>
+    <title>Add Post</title>
   </head>
   <body>
 
     <div class="container">
 
-      <div class="float-right">
-        <a href="/add" >Add New Post</button></a>
-      </div>
+      <form method="POST" action="">
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col">User ID</th>
-            <th scope="col">Title</th>
-            <th scope="col">Body</th>
-            <th scope="col">Created On</th>
-            <th scope="col">Last Updated</th>
-            <th scope="col" colspan="2">Action</th>
-          </tr>
-        </thead>
-        <tbody>
+        @csrf
 
-          @foreach($posts as $post)
-          <tr>
-            <td>{{$post['id']}}</td>
-            <td>{{$post['user_id']}}</td>
-            <td>{{$post['title']}}</td>
-            <td>{{$post['body']}}</td>
-            <td>{{$post['created_at']}}</td>
-            <td>{{$post['updated_at']}}</td>
-            <td><a href="">Update</a></td>
-            <td><a href="">Delete</a></td>
-          </tr>
-          @endforeach
-          
-        </tbody>
-      </table>
+        <div class="form-group">
+          <label>User ID</label>
+          <input type="number" class="form-control" name="id" placeholder="Enter ID">
+        </div>
+
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" placeholder="Enter Post Title" name="title">
+        </div>
+
+        <div class="form-group">
+          <label>Body</label>
+          <textarea class="form-control" rows="5" name="body"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button> 
+        <a href="/posts" class="btn btn-primary">Back</a>
+
+      </form>
 
     </div>
 

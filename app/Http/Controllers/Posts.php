@@ -15,4 +15,10 @@ class Posts extends Controller
 
 	}
 
+	public function add(){
+
+		//return view('add');
+
+	}
+
 }
