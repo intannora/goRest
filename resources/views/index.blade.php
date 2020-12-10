@@ -12,6 +12,7 @@
     <title>Post Index</title>
   </head>
   <body>
+    @include('header')
 
     <div class="container">
 
